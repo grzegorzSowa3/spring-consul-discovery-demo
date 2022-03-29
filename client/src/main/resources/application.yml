@@ -1,0 +1,8 @@
+spring:
+  cloud.consul.enabled: false
+
+---
+
+spring:
+  config.activate.on-profile: deployment
+  cloud.consul.enabled: false
