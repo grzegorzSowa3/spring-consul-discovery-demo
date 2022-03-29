@@ -65,8 +65,8 @@
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
-						<imageName>gcr.io/${gcloud.project.id}/${project.artifactId}:${project.version}</imageName>
 					</excludes>
+					<imageName>gcr.io/${gcloud.project.id}/${project.artifactId}:${project.version}</imageName>
 				</configuration>
 			</plugin>
 			<plugin>
