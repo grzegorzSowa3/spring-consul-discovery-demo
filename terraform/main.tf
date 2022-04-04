@@ -99,6 +99,9 @@ resource "google_container_node_pool" "vpc_native_cluster_preemptible_nodes" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
+  timeouts {
+    create = "10m"
+  }
 }
 
 resource "google_compute_global_address" "private_ip" {
