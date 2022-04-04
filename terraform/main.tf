@@ -121,4 +121,7 @@ resource "helm_release" "consul" {
   chart      = "consul"
   version    = "0.41.1"
   timeout    = 900
+  depends_on = [
+      google_container_node_pool.vpc_native_cluster_preemptible_nodes,
+    ]
 }
