@@ -74,14 +74,14 @@ resource "google_container_cluster" "vpc_native_cluster" {
 
   cluster_autoscaling {
     enabled = true
-    resource_limits [
+    resource_limits = [
       {
-        type = "cpu"
-        maximum = 4
+        resource_type = "cpu"
+        maximum = 8
       },
       {
-        type = "memory"
-        maximum = 8
+        resource_type = "memory"
+        maximum = 16
       }
     ]
   }
