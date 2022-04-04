@@ -108,4 +108,5 @@ resource "helm_release" "consul" {
   repository = "https://helm.releases.hashicorp.com"
   chart      = "consul"
   version    = "0.41.1"
+  timeout    = 900
 }
