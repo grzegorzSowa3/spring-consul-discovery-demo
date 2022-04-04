@@ -4,6 +4,10 @@ terraform {
       source = "hashicorp/google"
       version = "3.88.0"
     }
+    helm = {
+      source = "hashicorp/helm"
+      version = "2.5.0"
+    }
   }
 }
 
@@ -103,5 +107,5 @@ resource "helm_release" "consul" {
   name       = "consul"
   repository = "https://helm.releases.hashicorp.com"
   chart      = "hashicorp/consul"
-  version    = "1.11.1"
+  version    = "1.11.4"
 }
