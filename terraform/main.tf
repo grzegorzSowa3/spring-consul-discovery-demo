@@ -71,6 +71,20 @@ resource "google_container_cluster" "vpc_native_cluster" {
     cluster_secondary_range_name  = google_compute_subnetwork.vpc_subnet.secondary_ip_range.0.range_name
     services_secondary_range_name = google_compute_subnetwork.vpc_subnet.secondary_ip_range.1.range_name
   }
+
+  cluster_autoscaling {
+    enabled = true
+    resource_limits [
+      {
+        type = "cpu"
+        maximum = 4
+      },
+      {
+        type = "memory"
+        maximum = 8
+      }
+    ]
+  }
 }
 
 resource "google_container_node_pool" "vpc_native_cluster_preemptible_nodes" {
