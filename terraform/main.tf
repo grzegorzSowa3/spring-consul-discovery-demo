@@ -106,5 +106,7 @@ resource "google_service_networking_connection" "service_vpc_connection" {
 resource "helm_release" "consul" {
   name       = "consul"
   repository = "https://helm.releases.hashicorp.com"
-  chart      = "hashicorp/consul-helm"
+  chart      = "consul"
+  version    = "0.41.1"
+  app_version = "1.11.3"
 }
