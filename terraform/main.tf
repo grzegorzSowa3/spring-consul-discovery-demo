@@ -107,5 +107,5 @@ resource "helm_release" "consul" {
   name       = "consul"
   repository = "https://helm.releases.hashicorp.com"
   chart      = "hashicorp/consul"
-  version    = "1.11.4"
+  version    = "1.11.3"
 }
