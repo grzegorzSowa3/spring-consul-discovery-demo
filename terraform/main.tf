@@ -13,6 +13,14 @@ provider "google" {
   zone    = var.zone
 }
 
+provider "helm" {
+  kubernetes {
+    token                  = data.google_client_config.client.access_token
+    host                   = data.google_container_cluster.gke.endpoint
+    cluster_ca_certificate = base64decode(data.google_container_cluster.gke.master_auth[0].cluster_ca_certificate)
+  }
+}
+
 data "google_client_config" "default" {}
 
 resource "google_service_account" "default" {
@@ -89,4 +97,11 @@ resource "google_service_networking_connection" "service_vpc_connection" {
   network                 = google_compute_network.vpc.id
   service                 = "servicenetworking.googleapis.com"
   reserved_peering_ranges = [google_compute_global_address.private_ip.name]
+}
+
+resource "helm_release" "consul" {
+  name       = "consul"
+  repository = "https://helm.releases.hashicorp.com"
+  chart      = "hashicorp/consul"
+  version    = "1.11.1"
 }
