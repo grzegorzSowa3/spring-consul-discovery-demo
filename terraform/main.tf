@@ -76,7 +76,7 @@ resource "google_container_cluster" "vpc_native_cluster" {
 resource "google_container_node_pool" "vpc_native_cluster_preemptible_nodes" {
   name       = "my-node-pool"
   cluster    = google_container_cluster.vpc_native_cluster.name
-  node_count = 1
+  node_count = 4
 
   node_config {
     preemptible  = true
