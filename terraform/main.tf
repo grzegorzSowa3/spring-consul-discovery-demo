@@ -50,7 +50,7 @@ resource "google_compute_subnetwork" "vpc_subnet" {
 
   secondary_ip_range {
     range_name    = "services-range"
-    ip_cidr_range = "192.168.1.0/22"
+    ip_cidr_range = "192.168.0.0/16"
   }
 
   secondary_ip_range {
