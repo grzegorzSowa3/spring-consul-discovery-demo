@@ -1,8 +1,9 @@
 spring:
   cloud.consul.enabled: false
+  application.name: server
 
 ---
 
 spring:
   config.activate.on-profile: deployment
-  cloud.consul.enabled: false
+  cloud.consul.enabled: true
