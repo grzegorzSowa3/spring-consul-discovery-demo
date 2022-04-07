@@ -30,7 +30,7 @@ public class HelloEndpoint {
     public ResponseEntity<Hello> helloExtended() {
         Hello helloFromServer = serverClient.getHello();
         return ResponseEntity.ok(new Hello(
-                String.format("Hello world from %s, passed by %s!!!",
+                String.format("'%s' ~ passed by %s",
                         helloFromServer.getMessage(),
                         instanceId
                 )));
