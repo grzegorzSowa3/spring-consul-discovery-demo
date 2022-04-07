@@ -5,7 +5,7 @@ spring:
       enabled: false
       discovery:
         prefer-ip-address: true
-        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        instanceId: ${spring.application.name}:${spring.application.instance_id}:${random.value}
 
 ---
 
