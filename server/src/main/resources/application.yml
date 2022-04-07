@@ -3,6 +3,7 @@ spring:
   cloud:
     consul:
       enabled: false
+      host: consul-consul-server
       discovery:
         prefer-ip-address: true
         instanceId: ${spring.application.name}:${random.value}
